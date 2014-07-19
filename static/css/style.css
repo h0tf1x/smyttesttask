@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+}
+
+div.val {
+    min-height: 30px;
+}
+
+#notification {
+    position: absolute;
+    top: 0px;
+    display: none;
+    z-index: 999;
+}

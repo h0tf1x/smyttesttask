@@ -1,0 +1,53 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html>
+<head>
+    <title>Runtime models test task</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static "css/datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+    <script type="text/javascript" src="{% static "js/datepicker.js" %}"></script>
+    <script type="text/template" id="table-template">
+        <a href="#table/<%-id%>"><%-title%></a>
+    </script>
+    <script type="text/template" id="cell">
+        <div>
+            <div class="val"><%-value%></div>
+            <input type="text" class="form-control form-control-inline" style="display: none;" value="<%-value%>" />
+        </div>
+    </script>
+    <script type="text/template" id="row">
+        <a href="#" class="remove"><i class="glyphicon glyphicon-remove"></i></a>
+    </script>
+</head>
+<body>
+<div id="notification" class="alert"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="nav nav-pills nav-stacked" id="tables">
+                </ul>
+            </div>
+
+            <div class="col-md-8">
+                <table id="grid" class="table table-bordered table-striped">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+
+                <a href="#" id="add-button" class="btn btn-primary">Add Row</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static "js/app.js" %}"></script>
+    <script type="text/javascript">
+        $(function() {
+            App.run();
+        });
+    </script>
+</body>
+</html>
